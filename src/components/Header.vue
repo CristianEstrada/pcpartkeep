@@ -3,14 +3,14 @@
     <img width="140px" src="" />
 
     <div class="header-buttons">
-      <p class="button-support">Inicio</p>
-      <p class="button-support">Soporte</p>
+      <img class="iconsearch" src="/icons/search.png" alt="search">
+     
       <input type="search" class="busqueda" placeholder="Buscar productos,marcas y mas...">
-      <p class="button-support">Buscar</p>
+     <!--  <p class="button-support">Buscar</p> -->
          
-      <div class="button-support-border">
+      <!-- <div class="button-support-border">
         <p>Iniciar sesión</p>
-      </div>
+      </div> -->
     </div>
   </div>
 </template>
@@ -20,27 +20,37 @@ export default {};
 </script>
 
 <style scoped>
+
 .busqueda{
-  
-  padding: 0px;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 15px;
-   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  border-radius: 7px;
-  padding: 3px;
-  height: 25px;
-  width: 350px;
+
+display: flex;
+align-items: center;
+justify-content: space-between;
+width: 526px;
+height: 32px;
+left: 457px;
+top: 14px;
+
+background: #F4ECEC;
+border-radius: 10px;
+
+}
+.iconsearch{
+display: flex;
+align-items: center;
+justify-content: space-between;
+
 }
 .header-main {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 90%;
-  height: 55px;
-  background: #ffffff;
-  box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.25);
-  padding: 0px 50px;
+ /* Header */
+
+display: flex;
+align-items: center;
+height: 60px;
+
+/* White Base */
+
+background: #FFFFFF;
 }
 .header-buttons {
   display: flex;
