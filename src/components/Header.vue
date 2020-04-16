@@ -1,17 +1,21 @@
 <template>
   <div class="header-main">
     
-    <img width="140px" src="/src/assets/pagina3.png" >
+    <img width="140px" src="" />
 
     <div class="header-buttons">
-      <img class="iconsearch" src="/icons/search.png" alt="search" >
-     
+      <!-- agregar imagenes de assets se hace con la forma de abajo -->
+
+    <button @click="ejemplo">esconder</button>
+    <button @click="reaparecer">aparecer</button>
+      <img src="../assets/categoria.png" alt="">
       <input type="search" class="busqueda" placeholder="Buscar productos,marcas y mas...">
-     <!--  <p class="button-support">Buscar</p> -->
-         
-      <!-- <div class="button-support-border">
-        <p>Iniciar sesión</p>
-      </div> -->
+      <img  v-if="muestraLogo" src="../assets/search.png" alt="search" />
+      <img src="../assets/account.png" alt="account" />
+      
+
+      
+     
     </div>
     
   </div>
@@ -20,7 +24,22 @@
 </template>
 
 <script>
-export default {};
+export default {
+ 
+  data() {
+    return {
+      muestraLogo: true,
+    }
+  },
+   methods:{
+    reaparecer(){
+      this.muestraLogo = true;
+    },
+    ejemplo(){
+      this.muestraLogo = false;
+    }
+  },
+}
 </script>
 
 <style scoped>
@@ -28,8 +47,7 @@ export default {};
 .busqueda{
 
 display: flex;
-align-items: center;
-justify-content: space-between;
+
 width: 526px;
 height: 32px;
 left: 457px;
@@ -41,8 +59,7 @@ border-radius: 10px;
 }
 .iconsearch{
 display: flex;
-align-items: center;
-justify-content: space-between;
+align-items: flex-end;
 
 }
 .header-main {
@@ -65,32 +82,13 @@ display: flex;
 }
 .header-buttons {
   display: flex;
-  width: 850px;
+  width: 1440px;
   height: 45px;
   align-items: center;
   justify-content: space-between;
 }
-.button-support {
-  color: #1a059b;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 20px;
-}
-.button-support-border {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: linear-gradient(
-    270deg,
-    #5b7cf0 0%,
-    rgba(88, 31, 249, 0.94) 67.59%
-  );
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  border-radius: 7px;
-  padding: 3px;
-  height: 35px;
-  width: 150px;
-}
+
+
 .button-support-border p {
   color: white;
   padding: 0px;
