@@ -1,9 +1,10 @@
 <template>
   <div class="header-main">
-    <img width="140px" src="" />
+    
+    <img width="140px" src="/src/assets/pagina3.png" >
 
     <div class="header-buttons">
-      <img class="iconsearch" src="/icons/search.png" alt="search">
+      <img class="iconsearch" src="/icons/search.png" alt="search" >
      
       <input type="search" class="busqueda" placeholder="Buscar productos,marcas y mas...">
      <!--  <p class="button-support">Buscar</p> -->
@@ -12,7 +13,10 @@
         <p>Iniciar sesión</p>
       </div> -->
     </div>
+    
   </div>
+  
+  
 </template>
 
 <script>
@@ -51,6 +55,13 @@ height: 60px;
 /* White Base */
 
 background: #FFFFFF;
+ position: absolute;
+left: -1px;
+right: -1px;
+top: -1px;
+bottom: -1px;
+border: 1px solid #4D94FF;
+display: flex;
 }
 .header-buttons {
   display: flex;
