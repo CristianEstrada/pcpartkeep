@@ -1,85 +1,96 @@
 <template>
   <div class="header-main">
-    <img width="140px" src="" />
+    
+      <img width="60px" src="../assets/pagina3.png" />
 
-    <div class="header-buttons">
-      <img class="iconsearch" src="/icons/search.png" alt="search">
-     
-      <input type="search" class="busqueda" placeholder="Buscar productos,marcas y mas...">
-     <!--  <p class="button-support">Buscar</p> -->
-         
-      <!-- <div class="button-support-border">
-        <p>Iniciar sesión</p>
-      </div> -->
+ <!-- agregar imagenes de assets se hace con la forma de abajo -->
+
+        <!-- <button @click="ejemplo">esconder</button>
+    <button @click="reaparecer">aparecer</button> -->
+
+      <div class="header-buttons">
+          <div class="menu">
+        <img src="../assets/categoria.png" alt="" />
+        <input
+          type="search"
+          class="busqueda"
+          placeholder="Buscar productos,marcas y mas..."/>
+        
+          <img v-if="muestraLogo" src="../assets/search.png" alt="search" />
+          <img src="../assets/account.png" alt="account" />
+        </div>
+      </div>
     </div>
-  </div>
+  
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      muestraLogo: true,
+    };
+  },
+  methods: {
+    reaparecer() {
+      this.muestraLogo = true;
+    },
+    ejemplo() {
+      this.muestraLogo = false;
+    },
+  },
+};
 </script>
 
 <style scoped>
-
-.busqueda{
-
-display: flex;
-align-items: center;
-justify-content: space-between;
-width: 526px;
-height: 32px;
-left: 457px;
-top: 14px;
-
-background: #F4ECEC;
-border-radius: 10px;
-
+.menu{
+  display: flex;
 }
-.iconsearch{
-display: flex;
-align-items: center;
-justify-content: space-between;
+.busqueda {
+  display: flex;
 
+  width: 526px;
+  height: 32px;
+  left: 457px;
+  top: 14px;
+
+  background: #f4ecec;
+  border-radius: 10px;
+}
+.iconsearch {
+  display: flex;
+  align-items: flex-end;
 }
 .header-main {
- /* Header */
+  /* Header */
 
-display: flex;
-align-items: center;
-height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+ 
 
-/* White Base */
+  height: 60px;
 
-background: #FFFFFF;
+  /* White Base */
+
+  background: #ffffff;
+  position: absolute;
+  left: -1px;
+  right: -1px;
+  top: -1px;
+  bottom: -1px;
+  border: 1px solid #4d94ff;
+  display: flex;
 }
 .header-buttons {
   display: flex;
-  width: 850px;
+
+  
   height: 45px;
   align-items: center;
   justify-content: space-between;
 }
-.button-support {
-  color: #1a059b;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 20px;
-}
-.button-support-border {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: linear-gradient(
-    270deg,
-    #5b7cf0 0%,
-    rgba(88, 31, 249, 0.94) 67.59%
-  );
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  border-radius: 7px;
-  padding: 3px;
-  height: 35px;
-  width: 150px;
-}
+
 .button-support-border p {
   color: white;
   padding: 0px;

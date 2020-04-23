@@ -12,8 +12,10 @@ export default {
 
 <style scoped>
 .Body{
-    height: 100%;
-    width: 100%;
-    background-color: black;
+display: flex;
+width: 1440px;
+height: 1024px;
+
+background: #FFFFFF;
 }
 </style>
