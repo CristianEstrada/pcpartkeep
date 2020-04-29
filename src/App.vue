@@ -1,8 +1,11 @@
 <template>
   <div>
     <div class="main">
-      <Header />
-      <Body />
+      
+      <Header />  
+      
+      <Body /> 
+      <Menu />
       <Footer />
       
     </div>
@@ -11,14 +14,17 @@
 
 <script>
 import Header from "./components/Header";
+import Menu from "./components/Menu";
 import Footer from "./components/Footer";
 import Body from "./components/Body";
+
 
 export default {
   name: "App",
   components: { Header,
   Footer, 
-  Body }
+  Body,
+  Menu }
 };
 </script>
 
