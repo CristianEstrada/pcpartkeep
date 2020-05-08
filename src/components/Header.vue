@@ -1,38 +1,47 @@
 <template>
-  <div class="header-main">
-    <img width="60px" src="../assets/pagina3.png" />
+  <div>
+  <b-navbar toggleable="lg" type="light" style="background-color: #fffff">
+    <b-navbar-brand href="#">
+      <img src="../assets/pagina3.png" style="width: 60px" alt="">
+    </b-navbar-brand>
 
-    <!-- agregar imagenes de assets se hace con la forma de abajo -->
+    <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
-    <!-- <button @click="ejemplo">esconder</button>
-    <button @click="reaparecer">aparecer</button> -->
-      
-    <div class="header-buttons">
-      
-      <ul class="submenu">
-        <li >
-          <transition name="fade">
-            <ul v-if="Categoria" @click="Categoria = false">
-              <li><a href="#">Sub menu</a></li>
-              <li><a href="#">Sub menu</a></li>
-              <li><a href="#">Sub menu</a></li>
-            </ul>
-          </transition>
-        </li>
-      </ul>
-      <img  @mouseover="Categoria = true" @mouseleave="Categoria = false" 
-      class="imagen" src="../assets/categoria.png" alt=""/>
-      <div class="menu">
-        <input
-          type="search"
-          class="busqueda"
-          placeholder="Buscar productos,marcas y mas..."
-        />
-        <img src="../assets/search.png" alt="search" />
-        <img src="../assets/account.png" alt="account" />
-      </div>
-    </div>
+    <b-collapse id="nav-collapse" is-nav>
+      <b-navbar-nav>
+        <b-nav-item href="#">Link</b-nav-item>
+        <b-nav-item href="#" disabled>Disabled</b-nav-item>
+      </b-navbar-nav>
+
+      <!-- Right aligned nav items -->
+      <b-navbar-nav class="ml-auto">
+        <b-nav-form>
+          <b-form-input size="sm" class="mr-sm-2" placeholder="Buscar"></b-form-input>
+          <b-button size="sm" class="my-2 my-sm-0" type="search">Buscar</b-button>
+        </b-nav-form>
+
+        <b-nav-item-dropdown text="Lenguaje" right>
+          <b-dropdown-item href="#">EN</b-dropdown-item>
+          <b-dropdown-item href="#">ES</b-dropdown-item>
+          <b-dropdown-item href="#">RU</b-dropdown-item>
+          <b-dropdown-item href="#">FA</b-dropdown-item>
+        </b-nav-item-dropdown>
+
+        <b-nav-item-dropdown right>
+          <!-- Using 'button-content' slot -->
+          <template v-slot:button-content>
+            <em>Usuario</em>
+          </template>
+          <b-dropdown-item href="#">Perfil</b-dropdown-item>
+          <b-dropdown-item href="#">Cerrar Sesion</b-dropdown-item>
+        </b-nav-item-dropdown>
+      </b-navbar-nav>
+    </b-collapse>
+  </b-navbar>
+  <div class="linea">
+
   </div>
+</div>
 </template>
 
 <script>
@@ -40,7 +49,7 @@ export default {
   data() {
     return {
       menu: true,
-      Categoria: false,
+      Categoria: false
     };
   },
   methods: {
@@ -49,94 +58,24 @@ export default {
     },
     ejemplo() {
       this.muestraLogo = true;
-    },
-  },
+    }
+  }
 };
 </script>
 
 <style scoped>
-.submenu {
-  display: flex;
-}
-.imagen{
-  display: flex;
-  
-}
-.submenu li {
-  list-style: none;
-}
-.submenu li a {
-  display: flex;
-  justify-content: flex-end;
-  flex: end;
-  background: chartreuse;
-  
-}
-.menu li ul li {
-  background: #fff;
-  transition: background 0.2s;
-}
-.menu li ul li:hover {
-  background: #444;
-}
-.fade-enter-active,
-.fade-leave-active {
-  transition: opacity 0.2s;
-}
-.fade-enter,
-.fade-leave-active {
-  opacity: 0;
-}
-.menu {
-  display: flex;
-}
-.busqueda {
-  display: flex;
-
-  width: 526px;
-  height: 32px;
-  left: 457px;
-  top: 14px;
-
-  background: #f4ecec;
-  border-radius: 10px;
-}
-.iconsearch {
-  display: flex;
-  align-items: flex-end;
-}
-.header-main {
+.linea {
   /* Header */
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  height: 60px;
+  
 
   /* White Base */
 
-  background: #ffffff;
-  position: absolute;
+  
   left: -1px;
   right: -1px;
   top: -1px;
   bottom: -1px;
   border: 1px solid #4d94ff;
-  display: flex;
-}
-.header-buttons {
-  display: flex;
-  height: 45px;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.button-support-border p {
-  color: white;
-  padding: 0px;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 20px;
+  
 }
 </style>

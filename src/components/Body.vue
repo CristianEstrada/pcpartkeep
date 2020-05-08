@@ -1,10 +1,6 @@
 <template>
     <div class="Body">
-            <p>Hola</p>
-            <div class="boton">
-            <button class="btn btn-danger">+</button>
-            </div>
-            <Menu></Menu>
+            
     </div>
 </template>
 
