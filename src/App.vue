@@ -3,9 +3,9 @@
     <div class="main">
       
       <Header />  
-      
+     
       <Body /> 
-      <Menu />
+       <Menu />
       <Footer />
       
     </div>
